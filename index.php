@@ -36,7 +36,7 @@ if($_FILES){
 			$msg = $file_name." 文件已存在!";
 		} else {
                 move_uploaded_file($_FILES["file"]["tmp_name"], $upload_path . $file_name);
-				$msg = $file_name . " 已上传成功";
+		$msg = $file_name . " 已上传成功";
         }
 }
 
