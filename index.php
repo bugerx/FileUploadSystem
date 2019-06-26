@@ -84,7 +84,7 @@ function out_success($msg){
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title"><?php if(!isset($code))echo "请选择文件"; ?></div>
 		  <div class="mdui-card-primary-title"><?php if(isset($code) && $code==0) out_success("上传成功");if(isset($code) && $code!=0) out_error("上传失败"); ?></div>
-          <div class="mdui-card-primary-subtitle"><?php echo isset($code)? $msg:"文件大小限制最大为6M"; ?></div>
+          <div class="mdui-card-primary-subtitle"><?php echo isset($code)? $msg:"文件大小限制最大为2M"; ?></div>
         </div>
 		<div class="mdui-divider"></div>
         <!-- 卡片的内容 -->
