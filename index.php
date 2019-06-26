@@ -1,6 +1,6 @@
 <?php
 if($_FILES){
-        $upload_path = "upload_file/";
+        $upload_path = "upload/";
         $code = $_FILES['file']['error'];
         $file_name = $_FILES["file"]["name"];
 		
