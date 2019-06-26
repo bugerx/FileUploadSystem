@@ -28,7 +28,7 @@ if($_FILES){
                                 $msg = "未知错误,错误代码:" . $code;
                 }
                 
-        } else if(!file_exists($upload_path)) {
+        } else if(!is_dir($upload_path)) {
 			$code = 8;
 			$msg = "文件上传路径出错,请联系网站管理员检查!";
 		} else if(file_exists($upload_path . $file_name)) {
@@ -50,7 +50,6 @@ function out_success($msg){
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.2.0" />
     <title>File Uplaod System</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
@@ -85,7 +84,7 @@ function out_success($msg){
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title"><?php if(!isset($code))echo "请选择文件"; ?></div>
 		  <div class="mdui-card-primary-title"><?php if(isset($code) && $code==0) out_success("上传成功");if(isset($code) && $code!=0) out_error("上传失败"); ?></div>
-          <div class="mdui-card-primary-subtitle"><?php echo isset($code)? $msg:"文件大小限制最大为6"; ?></div>
+          <div class="mdui-card-primary-subtitle"><?php echo isset($code)? $msg:"文件大小限制最大为6M"; ?></div>
         </div>
 		<div class="mdui-divider"></div>
         <!-- 卡片的内容 -->
